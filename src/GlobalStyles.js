@@ -46,7 +46,13 @@ table {
 	border-spacing: 0;
 }
 /* ---------------- END OF CSS RESET ------------------ */
+html{
+	scroll-behavior: smooth;
+}
 
+body{
+	font-family: 'Quicksand', sans-serif;
+}
 
 `;
 

@@ -57,29 +57,9 @@ to {
   transform:rotate(360deg);
 }`;
 
-// const grow = keyframes`
-//   from {
-//     transform: scale(1);
-//   }
-//   to {
-//     transform: scale(5);
-//   }
-// `;
-
-// const fade = keyframes`
-// from {
-//   transform:rotate(0deg);
-// }
-// to {
-//   transform:rotate(360deg);
-// }`;
-
 const Svg = styled.svg`
   position: absolute;
-  width: 200px;
-  height: 200px;
-  animation-name: ${spin};
-  animation-duration: 5000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  width: 50px;
+  height: 50px;
+  animation: ${spin} 3000ms infinite linear;
 `;

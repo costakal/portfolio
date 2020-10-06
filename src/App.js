@@ -1,31 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
-import Vortex from "./Vortex";
+import NavBar from "./components/NavBar";
+import Personal from "./components/Personal";
 
 function App() {
-  const [vortexColor, setVortexColor] = useState("#8BCF21");
-
   return (
     <Wrapper>
       <GlobalStyles />
-      <EnterVortex
-        onMouseEnter={() => {
-          setVortexColor("#79b51b");
-        }}
-        onMouseLeave={() => {
-          setVortexColor("#8BCF21");
-        }}
-        onClick={() => {}}
-      >
-        <Vortex color="#fff" transform="translate(0, 1280) scale(0.1, -0.1)" />
-        <Vortex
-          color={vortexColor}
-          transform="translate(50, 1280) scale(0.1, -0.1)"
-        />
-      </EnterVortex>
-
-      {/* Onload only vortex is visible and then everything is transitioned and time and the rest of the components are rendered. */}
+      <NavBar />
+      <NavSpacer />
+      <Personal />
     </Wrapper>
   );
 }
@@ -33,17 +18,39 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  height: 50vh;
   background: black;
-  height: 100vh;
+
+  /* background: linear-gradient(
+    209deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(9, 9, 9, 1) 50%,
+    rgba(65, 65, 65, 1) 100%
+  ); */
+
+  &:after {
+    background: linear-gradient(
+      209deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(9, 9, 9, 1) 50%,
+      rgba(65, 65, 65, 1) 100%
+    );
+    position: absolute;
+    content: "";
+    right: 0px;
+    top: 50vh;
+    max-width: 100vw;
+    border-width: 50vh 50vw;
+    border-style: solid;
+    border-color: black black rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    z-index: -1;
+  }
 `;
 
-const EnterVortex = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 1s ease;
+const NavSpacer = styled.div`
+  position: relative;
+  background: black;
+  height: 80px;
+  z-index: -1;
 `;
