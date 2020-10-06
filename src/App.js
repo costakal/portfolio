@@ -3,14 +3,20 @@ import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import NavBar from "./components/NavBar";
 import Personal from "./components/Personal";
+import Projects from "./components/Projects";
+
+import bg from "./assets/graffiti.jpg";
 
 function App() {
   return (
     <Wrapper>
       <GlobalStyles />
+      <Background />
       <NavBar />
       <NavSpacer />
+      <Bio />
       <Personal />
+      <Projects />
     </Wrapper>
   );
 }
@@ -21,14 +27,6 @@ const Wrapper = styled.div`
   position: relative;
   height: 50vh;
   background: black;
-
-  /* background: linear-gradient(
-    209deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(9, 9, 9, 1) 50%,
-    rgba(65, 65, 65, 1) 100%
-  ); */
-
   &:after {
     background: linear-gradient(
       209deg,
@@ -53,4 +51,18 @@ const NavSpacer = styled.div`
   background: black;
   height: 80px;
   z-index: -1;
+`;
+
+const Bio = styled.div``;
+
+const Background = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(139, 207, 33, 0.5), rgba(0, 0, 0, 0.7)),
+    url(${bg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
 `;
