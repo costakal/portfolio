@@ -26,7 +26,7 @@ export default App;
 const Wrapper = styled.div`
   position: relative;
   height: 50vh;
-  background: black;
+  background: rgba(0, 0, 0, 0.9);
   &:after {
     background: linear-gradient(
       209deg,
@@ -41,7 +41,8 @@ const Wrapper = styled.div`
     max-width: 100vw;
     border-width: 50vh 50vw;
     border-style: solid;
-    border-color: black black rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0.9) rgba(0, 0, 0, 0.9) rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0);
     z-index: -1;
   }
 `;
